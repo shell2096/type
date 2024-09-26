@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Atualizada Automaticamente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    
+    <p id="dataHora"></p>
+
+    <script>
+        function atualizarData() {
+            const agora = new Date();
+            const dataFormatada = agora.toLocaleDateString('pt-BR', {
+                weekday: 'long', // Inclui o dia da semana
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            document.getElementById('dataHora').innerText = dataFormatada;
+        }
+
+        // Atualiza a data ao carregar a página
+        atualizarData();
+    </script>
+</body>
+</html>
